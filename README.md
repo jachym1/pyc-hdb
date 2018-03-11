@@ -12,8 +12,8 @@ git clone https://github.com/SAP/pyhdb.git
 
 Edit pyhdb/pyhdb/protocol/types.py to avoid NoneType error during compilation
 Comment lines:
-
-class NoneType(Type):
+Begin of code
+  class NoneType(Type):
 
     python_type = None.__class__
 
@@ -32,7 +32,7 @@ class NoneType(Type):
     This is achieved by setting the MSB of the type_code byte to 1
 
         return struct.pack('<B', type_code | 0x80)
-        
+ End of code    
         
     cd pyhdb
     Edit __main__.py according to your needs - HANA connection parameters and sql statements
