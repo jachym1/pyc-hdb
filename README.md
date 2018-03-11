@@ -11,7 +11,9 @@ Install latest py-HDB client version from git epository
 git clone https://github.com/SAP/pyhdb.git
 
 Edit pyhdb/pyhdb/protocol/types.py to avoid NoneType error during compilation
+
 Comment lines:
+
 Begin of code
 
     class NoneType(Type):
