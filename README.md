@@ -1,9 +1,12 @@
 # pyc-hdb Python compiled HANA client
+
 Procedure to compile pure SAP Python client for HANA Database to C binary executable to speed up program execution.
+
 Install Python and Nuitka package from http://nuitka.net/pages/download.html
 Edit fibers.h Nuitka header located in site-packages/nuitka/build/include/nuitka to avoid error during compilation (missing type)
 Add line
 #include <stdint.h>
+
 Install latest py-HDB client version from git epository
 git clone https://github.com/SAP/pyhdb.git
 
