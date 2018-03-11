@@ -33,7 +33,7 @@ class NoneType(Type):
 
         return struct.pack('<B', type_code | 0x80)
 
-
+Edit    python_type = None.__class__
 Edit pyhdb.__main__.py according your needs – HANA db connection parameters and sql statements
 
 Compile the program
