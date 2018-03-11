@@ -8,26 +8,27 @@ Install latest py-HDB client version from git epository
 git clone https://github.com/SAP/pyhdb.git
 
 Edit pyhdb/pyhdb/protocol/types.py to avoid NoneType error during compilation
-Comment lines
-#class NoneType(Type):
+Comment lines:
 
-#    python_type = None.__class__
+class NoneType(Type):
 
-#    @classmethod
-#    def to_sql(cls, _):
+    python_type = None.__class__
 
-#        return text_type("NULL")
+    @classmethod
+    def to_sql(cls, _):
+
+        return text_type("NULL")
 
 
-#    @classmethod
+    @classmethod
 
-#    def prepare(cls, type_code):
+    def prepare(cls, type_code):
 
-#        """Prepare a binary NULL value for given type code"""
+        """Prepare a binary NULL value for given type code"""
         
-# This is achieved by setting the MSB of the type_code byte to 1
+ This is achieved by setting the MSB of the type_code byte to 1
 
-#        return struct.pack('<B', type_code | 0x80)
+        return struct.pack('<B', type_code | 0x80)
 
 cd pyhdb
 Edit __main__.py according your needs – HANA db connection parameters and sql statements
