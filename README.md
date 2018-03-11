@@ -13,7 +13,8 @@ git clone https://github.com/SAP/pyhdb.git
 Edit pyhdb/pyhdb/protocol/types.py to avoid NoneType error during compilation
 Comment lines:
 Begin of code
-  class NoneType(Type):
+
+    class NoneType(Type):
 
     python_type = None.__class__
 
@@ -40,8 +41,8 @@ Begin of code
 
 Compile the program
 
-nuitka . --recurse-all
-mv ..exe test
-./test
+    nuitka . --recurse-all
+    mv ..exe test
+    ./test
 
 Enjoy
